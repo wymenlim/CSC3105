@@ -24,13 +24,17 @@ def import_from_files():
             output_data = [] 
             # read data from file
             df = pd.read_csv(filename, sep=',', header=0)
-            input_data = df.as_matrix()
+            input_data = df.to_numpy()
             # append to array
             if first > 0:
                 first = 0
                 output_arr = input_data
             else:
                 output_arr = vstack((output_arr, input_data))
+
+
+    for item in output_arr:
+        item[15:] = item[15:] / float(item[9])
     
     return output_arr
 
