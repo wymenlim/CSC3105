@@ -29,3 +29,5 @@ env/
 
 # claude
 /.claude
+#latex draft
+/code/draft-wymen.tex
